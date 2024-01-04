@@ -12,8 +12,9 @@ class FizzBuzzResolver
 private:
 	int first100NumberList[SIZE];
 	void initArray();
+	bool multipleOfFive(int position);
 
 public:
-	bool multipleOfThree()
+	bool multipleOfThree(int position);
 };
 
