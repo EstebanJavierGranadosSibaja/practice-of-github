@@ -3,6 +3,6 @@
 int main()
 {
 	FizzBuzzResolver method; 
-	method.fizzBuzz(); 
+	method.showFizzBuzz();
 	return 0;
 }

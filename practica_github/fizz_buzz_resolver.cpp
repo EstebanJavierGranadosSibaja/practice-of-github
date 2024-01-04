@@ -5,23 +5,38 @@ void FizzBuzzResolver::initArray()
 	for (int position = 0; position < SIZE; position++)
 	{
 		first100NumberList[position] = position + 1;
+		fizzBuzz(first100NumberList[position]);
 	}
 }
 
-void FizzBuzzResolver::multipleOfThree(int position)
+string FizzBuzzResolver::multipleOfThreeAndFive(int position)
+{
+	bool isMultipleOfThreeAndFive = isExactlyDivisible(position, DIVISOR_OR_THREE) &&
+		isExactlyDivisible(position, DIVISOR_OR_FIVE);
+	if (isMultipleOfThreeAndFive)
+	{
+		return " FIZZBUZZ ";
+	}
+	
+	return "";
+}
+
+string FizzBuzzResolver::multipleOfThree(int position)
 {
 	if (isExactlyDivisible(position, DIVISOR_OR_THREE))
 	{
-		cout << "Fizz" << " "; 
+		return " Fizz ";
 	}
+	return "";
 }
 
-void FizzBuzzResolver::multipleOfFive(int position)
+string FizzBuzzResolver::multipleOfFive(int position)
 {
 	if (isExactlyDivisible(position, DIVISOR_OR_FIVE))
 	{
-		cout << "Buzz" << " ";
+		return " Buzz ";
 	}
+	return "";
 }
 
 bool FizzBuzzResolver::isExactlyDivisible(int number, int divisor)
@@ -35,25 +50,31 @@ bool FizzBuzzResolver::isExactlyDivisible(int number, int divisor)
 	return false;
 }
 
-void FizzBuzzResolver::fizzBuzz()
+void FizzBuzzResolver::fizzBuzz(int position)
 {
-	initArray();
+	string threeAndFive = multipleOfThreeAndFive(position);
+	string theree = multipleOfThree(position);
+	string five = multipleOfFive(position);
+	bool isAllEmpty = threeAndFive == "" && theree == "" && five == "";
 
-	for (int position = 0; position < SIZE; position++)
+	if (threeAndFive != "")
 	{
-		if (first100NumberList[position] % DIVISOR_OR_THREE == 0)
-		{
-			multipleOfThree(first100NumberList[position]);
-			continue;
-		}
+		cout << threeAndFive;
+		return;
+	}
+	cout << theree; 
+	cout << five; 
 
-		if (first100NumberList[position] % DIVISOR_OR_FIVE == 0)
-		{
-			multipleOfFive(first100NumberList[position]);
-			continue;
-		}
-
-		cout << first100NumberList[position] << " ";
+	if (isAllEmpty)
+	{
+		cout << position << " ";
 	}
 }
+
+void FizzBuzzResolver::showFizzBuzz()
+{
+	initArray();
+}
+
+
 

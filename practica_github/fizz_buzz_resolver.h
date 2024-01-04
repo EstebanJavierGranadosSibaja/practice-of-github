@@ -12,11 +12,13 @@ class FizzBuzzResolver
 private:
 	int first100NumberList[SIZE];
 	void initArray();
-	void multipleOfFive(int position);
+	string multipleOfThreeAndFive(int position); 
+	string multipleOfThree(int position);
+	string multipleOfFive(int position);
+	bool isExactlyDivisible(int position, int divisor);
+	void fizzBuzz(int position);
 
 public:
-	void multipleOfThree(int position);
-	bool isExactlyDivisible(int position, int divisor);
-	void fizzBuzz();
+	void showFizzBuzz();
 };
 
