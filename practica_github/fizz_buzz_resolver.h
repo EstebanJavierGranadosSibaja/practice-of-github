@@ -15,7 +15,8 @@ private:
 	bool multipleOfFive(int position);
 
 public:
-	bool multipleOfThree(int position);
+	void multipleOfThree(int position);
 	bool isExactlyDivisible(int position, int divisor);
+	void fizzBuzz();
 };
 

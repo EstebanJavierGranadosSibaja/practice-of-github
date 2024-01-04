@@ -5,20 +5,20 @@ void FizzBuzzResolver::initArray()
 	for (int position = 0; position < SIZE; position++)
 	{
 		first100NumberList[position] = position + 1;
-		cout << first100NumberList[position] << " ";
+		multipleOfThree(first100NumberList[position]);
 	}
 }
 
-bool FizzBuzzResolver::multipleOfThree(int position)
+void FizzBuzzResolver::multipleOfThree(int position)
 {
-		bool isAMultipleOfThree = position % DIVISOR_OR_THREE == 0;
-
-		if (isAMultipleOfThree)
-		{
-			return true;
-		}
-
-	return false;
+	if (isExactlyDivisible(position, DIVISOR_OR_THREE))
+	{
+		cout << "FIZZ" << " "; 
+	}
+	else
+	{
+		cout << position << " ";
+	}
 }
 
 bool FizzBuzzResolver::multipleOfFive(int position)
@@ -33,16 +33,19 @@ bool FizzBuzzResolver::multipleOfFive(int position)
 	return false;
 }
 
-bool FizzBuzzResolver::isExactlyDivisible(int position, int divisor)
+bool FizzBuzzResolver::isExactlyDivisible(int number, int divisor)
 {
-	bool isExactlyDivisible = position % divisor == 0;
+	bool isExactlyDivisible = number % divisor == 0;
 
 	if (isExactlyDivisible)
 	{
 		return true;
 	}
 	return false;
+}
 
-	return false;
+void FizzBuzzResolver::fizzBuzz()
+{
+	initArray(); 
 }
 

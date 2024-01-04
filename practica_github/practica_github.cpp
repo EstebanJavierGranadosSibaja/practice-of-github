@@ -2,6 +2,7 @@
 
 int main()
 {
-
+	FizzBuzzResolver method; 
+	method.fizzBuzz(); 
 	return 0;
 }
