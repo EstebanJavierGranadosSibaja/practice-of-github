@@ -14,5 +14,6 @@ private:
 	void initArray();
 
 public:
+	bool multipleOfThree()
 };
 
