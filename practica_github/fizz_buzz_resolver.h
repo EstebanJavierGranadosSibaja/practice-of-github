@@ -16,5 +16,6 @@ private:
 
 public:
 	bool multipleOfThree(int position);
+	bool isExactlyDivisible(int position, int divisor);
 };
 
