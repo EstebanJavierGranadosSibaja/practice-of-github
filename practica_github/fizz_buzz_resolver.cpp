@@ -9,15 +9,12 @@ void FizzBuzzResolver::initArray()
 	}
 }
 
-string FizzBuzzResolver::multipleOfThreeAndFive(int position)
+string FizzBuzzResolver::multipleOfTwo(int position)
 {
-	bool isMultipleOfThreeAndFive = isExactlyDivisible(position, DIVISOR_OR_THREE) &&
-		isExactlyDivisible(position, DIVISOR_OR_FIVE);
-	if (isMultipleOfThreeAndFive)
+	if (isExactlyDivisible(position, DIVISOR_OR_TWO))
 	{
-		return " FIZZBUZZ ";
+		return " Ping ";
 	}
-	
 	return "";
 }
 
@@ -39,6 +36,19 @@ string FizzBuzzResolver::multipleOfFive(int position)
 	return "";
 }
 
+string FizzBuzzResolver::multipleOfThreeAndFive(int position)
+{
+	bool isMultipleOfThreeAndFive = isExactlyDivisible(position, DIVISOR_OR_THREE) &&
+		isExactlyDivisible(position, DIVISOR_OR_FIVE);
+	if (isMultipleOfThreeAndFive)
+	{
+		return " FIZZBUZZ ";
+	}
+
+	return "";
+}
+
+
 bool FizzBuzzResolver::isExactlyDivisible(int number, int divisor)
 {
 	bool isExactlyDivisible = number % divisor == 0;
@@ -53,21 +63,24 @@ bool FizzBuzzResolver::isExactlyDivisible(int number, int divisor)
 void FizzBuzzResolver::fizzBuzz(int position)
 {
 	string threeAndFive = multipleOfThreeAndFive(position);
-	string theree = multipleOfThree(position);
+	string two = multipleOfTwo(position);
+	string three = multipleOfThree(position);
 	string five = multipleOfFive(position);
-	bool isAllEmpty = threeAndFive == "" && theree == "" && five == "";
+	bool isAllEmpty = threeAndFive == "" && three == "" && five == "" && two == "";
 
 	if (threeAndFive != "")
 	{
 		cout << threeAndFive;
 		return;
 	}
-	cout << theree; 
-	cout << five; 
+
+	cout << two;
+	cout << three; 
+	cout << five;
 
 	if (isAllEmpty)
 	{
-		cout << position << " ";
+		cout << " " << position << " ";
 	}
 }
 
