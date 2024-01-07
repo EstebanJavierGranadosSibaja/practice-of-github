@@ -17,11 +17,11 @@ private:
 	string multipleOfTwo(int position);
 	string multipleOfThree(int position);
 	string multipleOfFive(int position);
-	string multipleOfThreeAndFive(int position);
+	string multipleOfSeven(int position);
 	bool isExactlyDivisible(int position, int divisor);
-	void fizzBuzz(int position);
+	void fizzBuzzAndPingPong(int position);
 
 public:
-	void showFizzBuzz();
+	void showFizzBuzzAndPingPong();
 };
 

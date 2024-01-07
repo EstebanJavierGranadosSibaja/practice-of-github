@@ -5,7 +5,7 @@ void FizzBuzzResolver::initArray()
 	for (int position = 0; position < SIZE; position++)
 	{
 		first100NumberList[position] = position + 1;
-		fizzBuzz(first100NumberList[position]);
+		fizzBuzzAndPingPong(first100NumberList[position]);
 	}
 }
 
@@ -13,7 +13,7 @@ string FizzBuzzResolver::multipleOfTwo(int position)
 {
 	if (isExactlyDivisible(position, DIVISOR_OR_TWO))
 	{
-		return " Ping ";
+		return "Ping";
 	}
 	return "";
 }
@@ -22,7 +22,7 @@ string FizzBuzzResolver::multipleOfThree(int position)
 {
 	if (isExactlyDivisible(position, DIVISOR_OR_THREE))
 	{
-		return " Fizz ";
+		return "Fizz";
 	}
 	return "";
 }
@@ -31,23 +31,19 @@ string FizzBuzzResolver::multipleOfFive(int position)
 {
 	if (isExactlyDivisible(position, DIVISOR_OR_FIVE))
 	{
-		return " Buzz ";
+		return "Buzz";
 	}
 	return "";
 }
 
-string FizzBuzzResolver::multipleOfThreeAndFive(int position)
+string FizzBuzzResolver::multipleOfSeven(int position)
 {
-	bool isMultipleOfThreeAndFive = isExactlyDivisible(position, DIVISOR_OR_THREE) &&
-		isExactlyDivisible(position, DIVISOR_OR_FIVE);
-	if (isMultipleOfThreeAndFive)
+	if (isExactlyDivisible(position, DIVISOR_OR_SEVEN))
 	{
-		return " FIZZBUZZ ";
+		return "Pong";
 	}
-
 	return "";
 }
-
 
 bool FizzBuzzResolver::isExactlyDivisible(int number, int divisor)
 {
@@ -60,31 +56,26 @@ bool FizzBuzzResolver::isExactlyDivisible(int number, int divisor)
 	return false;
 }
 
-void FizzBuzzResolver::fizzBuzz(int position)
+void FizzBuzzResolver::fizzBuzzAndPingPong(int position)
 {
-	string threeAndFive = multipleOfThreeAndFive(position);
-	string two = multipleOfTwo(position);
-	string three = multipleOfThree(position);
-	string five = multipleOfFive(position);
-	bool isAllEmpty = threeAndFive == "" && three == "" && five == "" && two == "";
+	string multipleOfTwoResult = multipleOfTwo(position);
+	string multipleOfThreeResult = multipleOfThree(position);
+	string multipleOfFiveResult = multipleOfFive(position);
+	string multipleOfSevenResult = multipleOfSeven(position);
 
-	if (threeAndFive != "")
-	{
-		cout << threeAndFive;
-		return;
-	}
+	bool isAllEmpty = multipleOfThreeResult == "" && multipleOfFiveResult == "" 
+		 && multipleOfTwoResult == "" && multipleOfSevenResult == "";
 
-	cout << two;
-	cout << three; 
-	cout << five;
+	cout << multipleOfThreeResult << multipleOfFiveResult << multipleOfTwoResult << multipleOfSevenResult;
 
 	if (isAllEmpty)
 	{
-		cout << " " << position << " ";
+		cout << position;
 	}
+	cout << " "; 
 }
 
-void FizzBuzzResolver::showFizzBuzz()
+void FizzBuzzResolver::showFizzBuzzAndPingPong()
 {
 	initArray();
 }
