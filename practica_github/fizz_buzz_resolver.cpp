@@ -66,13 +66,14 @@ void FizzBuzzResolver::fizzBuzzAndPingPong(int position)
 	bool isAllEmpty = multipleOfThreeResult == "" && multipleOfFiveResult == "" 
 		 && multipleOfTwoResult == "" && multipleOfSevenResult == "";
 
-	cout << multipleOfThreeResult << multipleOfFiveResult << multipleOfTwoResult << multipleOfSevenResult;
+	cout << multipleOfThreeResult + multipleOfFiveResult + multipleOfTwoResult + multipleOfSevenResult;
 
 	if (isAllEmpty)
 	{
 		cout << position;
 	}
-	cout << " "; 
+
+	cout << " - "; 
 }
 
 void FizzBuzzResolver::showFizzBuzzAndPingPong()

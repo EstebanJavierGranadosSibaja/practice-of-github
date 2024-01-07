@@ -4,5 +4,6 @@ int main()
 {
 	FizzBuzzResolver method; 
 	method.showFizzBuzzAndPingPong();
+
 	return 0;
 }
