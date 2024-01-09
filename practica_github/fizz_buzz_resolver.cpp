@@ -47,13 +47,9 @@ string FizzBuzzResolver::multipleOfSeven(int position)
 
 bool FizzBuzzResolver::isExactlyDivisible(int number, int divisor)
 {
-	bool isExactlyDivisible = number % divisor == 0;
-
-	if (isExactlyDivisible)
-	{
-		return true;
-	}
-	return false;
+	bool isDivisible = number % divisor == 0;
+return isDivisible;
+	 
 }
 
 void FizzBuzzResolver::fizzBuzzAndPingPong(int position)
@@ -63,8 +59,8 @@ void FizzBuzzResolver::fizzBuzzAndPingPong(int position)
 	string multipleOfFiveResult = multipleOfFive(position);
 	string multipleOfSevenResult = multipleOfSeven(position);
 
-	bool isAllEmpty = multipleOfThreeResult == "" && multipleOfFiveResult == "" 
-		 && multipleOfTwoResult == "" && multipleOfSevenResult == "";
+	bool isAllEmpty = multipleOfThreeResult == "" && multipleOfFiveResult == ""  &&
+		              multipleOfTwoResult == "" && multipleOfSevenResult == "";
 
 	cout << multipleOfThreeResult + multipleOfFiveResult + multipleOfTwoResult + multipleOfSevenResult;
 

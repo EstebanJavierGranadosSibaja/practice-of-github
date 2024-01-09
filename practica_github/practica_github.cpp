@@ -2,8 +2,8 @@
 
 int main()
 {
-	FizzBuzzResolver method; 
-	method.showFizzBuzzAndPingPong();
+	FizzBuzzResolver resolver; 
+	resolver.showFizzBuzzAndPingPong();
 
 	return 0;
 }
